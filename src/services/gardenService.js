@@ -2,7 +2,7 @@ import * as tokenService from './tokenService'
 
 const BASE_URL = `${process.env.REACT_APP_API_URL}/api/gardens`
 
-async function create(garden) {
+async function create(garden){
   console.log(garden)
   try {
     const res = await fetch(`${BASE_URL}/`, {
@@ -38,8 +38,20 @@ async function getOne(id){
   }
 }
 
-async function update(id){
-
+async function update(garden){
+  try {
+    const res = await fetch(`${BASE_URL}/${garden.id}`, {
+      method: 'PUT',
+      headers: {
+        'content-type': 'application/json',
+        'Authorization': `Bearer ${tokenService.getToken()}`
+      },
+      body: JSON.stringify(garden)
+    })
+    return await res.json()
+  } catch (error) {
+    throw error
+  }
 }
 
 export { create, getAll, getOne, update }

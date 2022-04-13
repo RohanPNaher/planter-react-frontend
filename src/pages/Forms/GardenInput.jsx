@@ -10,7 +10,7 @@ const GardenInput = ({ form, handleChange }) => {
         value={form.garden_description ? form.garden_description : ''} onChange={handleChange} id="garden_description" name="garden_description" type="text" placeholder="Description" autoComplete="off" required
       />
       <label htmlFor="garden_type">Type</label>
-      <select name="garden_type" onChange={handleChange} required>
+      <select name="garden_type" onChange={handleChange} value={form.garden_type ? form.garden_type : ''} required>
         <option value="Outdoor">Outdoor</option>
         <option value="Indoor">Indoor</option>
       </select>

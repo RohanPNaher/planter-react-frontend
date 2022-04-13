@@ -7,8 +7,8 @@ const GardenList = ({ gardens }) => {
       {gardens.length ?
         <>
           {gardens.map(garden =>
-            <div>
-              <GardenCard key={garden.id} garden={garden} />
+            <div key={garden.id}>
+              <GardenCard garden={garden} />
             </div>
             // <p key={garden.id}>{garden.name}</p>
           )}
