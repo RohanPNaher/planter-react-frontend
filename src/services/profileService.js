@@ -17,4 +17,4 @@ async function getSingleProfile(id) {
   return await res.json()
 }
 
-export { getAllProfiles }
+export { getAllProfiles, getSingleProfile }
