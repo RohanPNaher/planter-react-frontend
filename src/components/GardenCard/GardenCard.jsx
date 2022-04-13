@@ -5,7 +5,6 @@ const Garden = ( {garden} ) => {
     <>
       <Link
         to={`/gardens/${garden.id}`}
-        state={{garden}}
       >
         View {garden.name}
       </Link>

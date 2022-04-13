@@ -5,10 +5,12 @@ import Signup from './pages/Signup/Signup'
 import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
-import * as authService from './services/authService'
-import * as gardenService from './services/gardenService'
 import GardenList from './pages/GardenList/GardenList'
 import GardenDetails from './pages/GardenDetails/GardenDetails'
+import GardenForm from './pages/Forms/GardenForm'
+
+import * as authService from './services/authService'
+import * as gardenService from './services/gardenService'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -23,6 +25,19 @@ const App = () => {
     }
     fetchData()
   }, [])
+
+  const addGarden = async (gardenData) => {
+    const garden = await gardenService.create(gardenData)
+    setGardens([...gardens, garden])
+  }
+
+  const updateGarden = async (gardenData) => {
+    const updatedGarden = await gardenService.update(gardenData)
+    setGardens(gardens.map((garden) => (
+      garden.id === updatedGarden.id ? updatedGarden : garden
+    )))
+  }
+
 
   const handleLogout = () => {
     authService.logout()
@@ -57,7 +72,15 @@ const App = () => {
         />
         <Route
           path="/gardens/:id"
-          element={user ? <GardenDetails /> : <Navigate to="/login" />}
+          element={user ? <GardenDetails user={user} /> : <Navigate to="/login" />}
+        />
+        <Route
+          path="/gardens/new"
+          element={user ? <GardenForm addGarden={addGarden} user={user} /> : <Navigate to="/login" />}
+        />
+        <Route
+          path="/gardens/:id/edit"
+          element={user ? <GardenForm gardens={gardens} updateGarden={updateGarden} user={user} /> : <Navigate to="/login" />}
         />
       </Routes>
     </>
