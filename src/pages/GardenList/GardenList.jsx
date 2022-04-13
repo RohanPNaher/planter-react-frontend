@@ -1,6 +1,5 @@
 import GardenCard from '../../components/GardenCard/GardenCard'
 
-
 const GardenList = ({ gardens }) => {
   return (
     <>
@@ -8,7 +7,8 @@ const GardenList = ({ gardens }) => {
       {gardens.length ?
         <>
           {gardens.map(garden =>
-            <p key={garden.id}>{garden.name}</p>
+            <GardenCard key={garden.id} garden={garden} />
+            // <p key={garden.id}>{garden.name}</p>
           )}
         </>
         :

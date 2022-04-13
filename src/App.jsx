@@ -8,6 +8,7 @@ import Profiles from './pages/Profiles/Profiles'
 import * as authService from './services/authService'
 import * as gardenService from './services/gardenService'
 import GardenList from './pages/GardenList/GardenList'
+import GardenDetails from './pages/GardenDetails/GardenDetails'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -53,6 +54,10 @@ const App = () => {
         <Route
           path="/gardens"
           element={user ? <GardenList gardens={gardens} /> : <Navigate to="/login" />}
+        />
+        <Route
+          path="/gardens/:id"
+          element={user ? <GardenDetails /> : <Navigate to="/login" />}
         />
       </Routes>
     </>
