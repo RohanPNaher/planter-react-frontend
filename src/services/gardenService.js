@@ -3,7 +3,6 @@ import * as tokenService from './tokenService'
 const BASE_URL = `${process.env.REACT_APP_API_URL}/api/gardens`
 
 async function create(garden){
-  console.log(garden)
   try {
     const res = await fetch(`${BASE_URL}/`, {
       method: "POST",
@@ -63,6 +62,25 @@ async function deleteOne(id){
     })
     return await res.json()
   } catch (error) {
+    throw error
+  }
+}
+
+async function addPlant(id, plantData){
+  console.log(id)
+  console.log(plantData)
+  try {
+    const res = await fetch(`${BASE_URL}/${id}/plants`, {
+      method: "POST",
+      headers: {
+        'content-type': 'application/json',
+        'Authorization': `Bearer ${tokenService.getToken()}`
+      },
+      body: JSON.stringify(plantData)
+    })
+    return await res.json()
+  } catch (error) {
+    console.log(error)
     throw error
   }
 }
