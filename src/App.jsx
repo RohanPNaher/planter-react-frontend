@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
 import NavBar from './components/NavBar/NavBar'
 import Signup from './pages/Signup/Signup'
@@ -6,11 +6,21 @@ import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import * as authService from './services/authService'
+import * as gardenService from './services/gardenService'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
+  const [gardens, setGardens] = useState([])
   console.log(user)
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await gardenService.getAll()
+      setGardens(data)
+    }
+    fetchData()
+  }, [])
 
   const handleLogout = () => {
     authService.logout()
