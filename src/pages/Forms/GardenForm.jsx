@@ -8,7 +8,9 @@ import GardenInput from './GardenInput';
 const GardenForm = (props) => {
   const { id } = useParams()
   const navigate = useNavigate()
-  const [form, setForm] = useState({})
+  const [form, setForm] = useState({
+    garden_type: "Outdoors"
+  })
 
   const handleSubmit = async (evt) => {
     evt.preventDefault()
