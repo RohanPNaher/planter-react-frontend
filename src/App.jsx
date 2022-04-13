@@ -8,6 +8,7 @@ import Profiles from './pages/Profiles/Profiles'
 import GardenList from './pages/GardenList/GardenList'
 import GardenDetails from './pages/GardenDetails/GardenDetails'
 import GardenForm from './pages/Forms/GardenForm'
+import Confirmation from './pages/Confirmation/Confirmation'
 
 import * as authService from './services/authService'
 import * as gardenService from './services/gardenService'
@@ -38,6 +39,10 @@ const App = () => {
     )))
   }
 
+  const deleteGarden = async (id) => {
+    await gardenService.deleteOne(id)
+    setGardens(gardens.filter(garden => garden.id !== parseInt(id)))
+  }
 
   const handleLogout = () => {
     authService.logout()
@@ -81,6 +86,10 @@ const App = () => {
         <Route
           path="/gardens/:id/edit"
           element={user ? <GardenForm gardens={gardens} updateGarden={updateGarden} user={user} /> : <Navigate to="/login" />}
+        />
+        <Route
+          path="/gardens/:id/confirmation"
+          element={user ? <Confirmation user={user} deleteGarden={deleteGarden} /> : <Navigate to="/login" />}
         />
       </Routes>
     </>

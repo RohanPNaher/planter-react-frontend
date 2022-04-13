@@ -54,4 +54,17 @@ async function update(garden){
   }
 }
 
-export { create, getAll, getOne, update }
+async function deleteOne(id){
+  console.log(id)
+  try {
+    const res = await fetch(`${BASE_URL}/${id}`, {
+      method: "DELETE",
+      headers: { 'Authorization': `Bearer ${tokenService.getToken()}` }
+    })
+    return await res.json()
+  } catch (error) {
+    throw error
+  }
+}
+
+export { create, getAll, getOne, update, deleteOne }
