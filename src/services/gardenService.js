@@ -19,4 +19,13 @@ async function create(garden) {
   }
 }
 
-export { create }
+async function getAll(){
+  try {
+    const res = await fetch(`${BASE_URL}`)
+    return await res.json()
+  } catch (error) {
+    throw error
+  }
+}
+
+export { create, getAll }
