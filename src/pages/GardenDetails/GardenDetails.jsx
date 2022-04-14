@@ -4,8 +4,9 @@ import { useState, useEffect } from "react";
 import { getOne } from "../../services/gardenService";
 
 import GardenActions from "../../components/GardenActions/GardenActions";
+import Plants from "../../components/PlantsList/PlantsList";
 
-const GardenDetails = ({user }) => {
+const GardenDetails = ({ user }) => {
   const { id } = useParams()
   const [garden, setGarden] = useState(null)
 
@@ -29,7 +30,11 @@ const GardenDetails = ({user }) => {
           <GardenActions garden={garden} user={user}/>
         </div>
         <div className="plants-container">
-          {/* plants to be mapped into here */}
+          <Plants 
+            garden={garden}
+            user={user}
+            setGarden={setGarden}
+          />
         </div>
       </section>
     </>

@@ -85,4 +85,4 @@ async function addPlant(id, plantData){
   }
 }
 
-export { create, getAll, getOne, update, deleteOne }
+export { create, getAll, getOne, update, deleteOne, addPlant }
