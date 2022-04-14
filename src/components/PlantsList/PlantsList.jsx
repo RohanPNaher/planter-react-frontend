@@ -9,7 +9,7 @@ const Plants = ({ user, garden, setGarden }) => {
         {garden.plants.length ?
           <>
             {garden.plants.map(plant => 
-              <PlantCard key={plant.id} plant={plant} />
+              <PlantCard key={plant.id} plant={plant} garden={garden} setGarden={setGarden} />
             )}
           </>
           :

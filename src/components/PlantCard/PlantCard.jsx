@@ -1,4 +1,5 @@
-const PlantCard = ({ plant }) => {
+const PlantCard = ({ plant, garden, setGarden }) => {
+  
   return (
     <>
       {plant.plant_name}

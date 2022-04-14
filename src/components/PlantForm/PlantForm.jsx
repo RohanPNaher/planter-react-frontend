@@ -1,10 +1,8 @@
 import { useState } from 'react';
-import { useParams } from 'react-router-dom';
 
 import { addPlant } from '../../services/gardenService';
 
 const PlantForm = ({ garden, setGarden }) => {
-  const { id } = useParams()
   const [form, setForm] = useState({
     water_schedule: "Top-Up Whenever"
   })
