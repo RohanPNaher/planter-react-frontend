@@ -97,4 +97,20 @@ async function deletePlant(id){
   }
 }
 
-export { create, getAll, getOne, update, deleteOne, addPlant, deletePlant }
+async function waterPlant(plant){
+  try {
+    const res = await fetch(`${BASE_URL}/garden/plants/${plant.id}`, {
+      method: "PUT",
+      headers: {
+        'content-type': 'application/json',
+        'Authorization': `Bearer ${tokenService.getToken()}`
+      },
+      body: JSON.stringify(plant)
+    })
+    return await res.json()
+  } catch (error) {
+    throw error
+  }
+}
+
+export { create, getAll, getOne, update, deleteOne, addPlant, deletePlant, waterPlant }
