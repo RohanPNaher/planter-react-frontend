@@ -2,4 +2,24 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  text-align: center;
+  padding: 40px;
+  margin-top: 100px;
+}
+
+.brownBorder {
+  border: 4px solid #cd7246;
+  border-radius: 15px;
+  background-color: white;
+}
+
+.greenBorder {
+  border: 4px solid #90be4f;
+  border-radius: 10px;
+}
+
+.messageContainer {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  text-align: center;
 }
