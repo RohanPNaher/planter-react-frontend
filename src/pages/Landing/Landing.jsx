@@ -1,5 +1,5 @@
 import styles from './Landing.module.css'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import { useState, useEffect } from 'react';
 
 import LoginForm from '../../components/LoginForm/LoginForm';
@@ -32,6 +32,7 @@ const Landing = ({ user, handleSignupOrLogin }) => {
             {<div className='login-container'>
               <p>{message}</p>
               <LoginForm updateMessage={updateMessage} handleSignupOrLogin={handleSignupOrLogin} />
+              <p>No Account yet? <Link to="/signup">Sign Up</Link></p>
             </div>}
           </div>
         </div>

@@ -13,7 +13,7 @@ const LoginPage = props => {
     <main className={styles.container}>
       <div className={styles.brownBorder}>
         <div className={styles.greenBorder}>
-          <h1>Log In</h1>
+          <h1 className={styles.h1}>Log In</h1>
           <p>{message}</p>
           <LoginForm
             handleSignupOrLogin={props.handleSignupOrLogin}

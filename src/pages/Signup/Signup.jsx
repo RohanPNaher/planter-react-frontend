@@ -13,7 +13,7 @@ const Signup = props => {
     <main className={styles.container}>
       <div className={styles.brownBorder}>
         <div className={styles.greenBorder}>
-          <h1>Sign Up</h1>
+          <h1 className={styles.h1}>Sign Up</h1>
           <p>{message}</p>
           <SignupForm {...props} updateMessage={updateMessage} />
         </div>
