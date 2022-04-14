@@ -1,0 +1,17 @@
+.navbar {
+  height: 70px;
+  background-color: white;
+  border-bottom: 4px solid #cd7246;
+  padding: 0;
+  margin: 0;
+}
+
+.greenBorder{
+  border-bottom: 4px solid #90be4f;
+  height: 100%;
+}
+
+.logo {
+  max-width: 40px;
+  max-height: 40px;
+}
