@@ -3,7 +3,7 @@
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
 .label,
@@ -13,4 +13,8 @@
 
 .inputContainer {
   margin-bottom: 1rem;
+}
+
+.label {
+  width: 130px;
 }
