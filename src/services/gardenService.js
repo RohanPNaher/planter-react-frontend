@@ -85,15 +85,13 @@ async function addPlant(id, plantData){
   }
 }
 
-async function deletePlant(id, plantId){
-  console.log(id)
-  console.log(plantId)
+async function deletePlant(id){
   try {
-    // const res = await fetch(`${BASE_URL}/${id}/plants/${plantId}`, {
-    //   method: "DELETE",
-    //   headers: { 'Authorization': `Bearer ${tokenService.getToken()}` }
-    // })
-    // return await res.json()
+    const res = await fetch(`${BASE_URL}/garden/plants/${id}`, {
+      method: "DELETE",
+      headers: { 'Authorization': `Bearer ${tokenService.getToken()}` }
+    })
+    return await res.json()
   } catch (error) {
     throw error
   }
