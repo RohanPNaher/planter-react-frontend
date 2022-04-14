@@ -1,6 +1,6 @@
 import { deletePlant, getOne, waterPlant } from "../../services/gardenService";
 
-const PlantCard = ({ plant, garden, setGarden }) => {
+const PlantCard = ({ plant, garden, setGarden, user }) => {
   console.log(garden.id)
 
   const handleDelete = async () => {
@@ -10,9 +10,9 @@ const PlantCard = ({ plant, garden, setGarden }) => {
   }
 
   const handleWater = async () => {
-    let water 
+    let water
     if (!plant.is_watered) {
-      water = {is_watered: true, id: plant.id}
+      water = { is_watered: true, id: plant.id }
     }
     await waterPlant(water)
     const data = await getOne(garden.id)
@@ -23,8 +23,10 @@ const PlantCard = ({ plant, garden, setGarden }) => {
     <>
       {plant.plant_name}
       {`${plant.is_watered}`}
-      {!plant.is_watered && <button onClick={handleWater} type="button" className="btn danger">Water Plant</button>}
-      <button onClick={handleDelete} type="button" className="btn danger">Delete</button>
+      {user.id === garden.profile_id && <>
+        {!plant.is_watered && <button onClick={handleWater} type="button" className="btn danger">Water Plant</button>}
+        <button onClick={handleDelete} type="button" className="btn danger">Delete</button>
+      </>}
     </>
   );
 }
