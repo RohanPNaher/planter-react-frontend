@@ -29,9 +29,10 @@ const Landing = ({ user, handleSignupOrLogin }) => {
               <h2>This app is designed to help you keep track of your plants watering schedule and also show off your gardens.</h2>
             </div>
 
-            <div className='login-container'>
+            {<div className='login-container'>
+              <p>{message}</p>
               <LoginForm updateMessage={updateMessage} handleSignupOrLogin={handleSignupOrLogin} />
-            </div>
+            </div>}
           </div>
         </div>
       </main>}
