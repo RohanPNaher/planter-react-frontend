@@ -14,7 +14,6 @@ async function create(garden){
     })
     return await res.json()
   } catch (error) {
-    console.log(error)
     throw error
   }
 }
@@ -54,7 +53,6 @@ async function update(garden){
 }
 
 async function deleteOne(id){
-  console.log(id)
   try {
     const res = await fetch(`${BASE_URL}/${id}`, {
       method: "DELETE",
@@ -67,8 +65,6 @@ async function deleteOne(id){
 }
 
 async function addPlant(id, plantData){
-  console.log(id)
-  console.log(plantData)
   try {
     const res = await fetch(`${BASE_URL}/${id}/plants`, {
       method: "POST",
@@ -80,7 +76,6 @@ async function addPlant(id, plantData){
     })
     return await res.json()
   } catch (error) {
-    console.log(error)
     throw error
   }
 }

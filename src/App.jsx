@@ -17,7 +17,6 @@ const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
   const [gardens, setGardens] = useState([])
-  console.log(user)
 
   useEffect(() => {
     const fetchData = async () => {

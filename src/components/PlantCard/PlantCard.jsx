@@ -2,8 +2,7 @@ import { deletePlant, getOne, waterPlant } from "../../services/gardenService";
 import styles from './PlantCard.module.css'
 
 const PlantCard = ({ plant, garden, setGarden, user }) => {
-  console.log(garden.id)
-
+  
   const handleDelete = async () => {
     await deletePlant(plant.id)
     const data = await getOne(garden.id)
