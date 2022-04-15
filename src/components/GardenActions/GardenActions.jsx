@@ -5,8 +5,8 @@ const GardenActions = ({ garden, user }) => {
   return (
     garden.profile_id === user.id &&
     <div className="garden-actions">
-      <button className="btn warn" onClick={() => navigate(`/gardens/${garden.id}/edit`, { state: garden })}>Edit</button>
-      <button className="btn danger" onClick={() => navigate(`/gardens/${garden.id}/confirmation`, { state: garden })}>Delete</button>
+      <button className="btn btn-warning" onClick={() => navigate(`/gardens/${garden.id}/edit`, { state: garden })}>Edit</button>
+      <button className="btn btn-danger" onClick={() => navigate(`/gardens/${garden.id}/confirmation`, { state: garden })}>Delete</button>
     </div>
   );
 }
