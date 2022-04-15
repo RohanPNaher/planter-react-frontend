@@ -12,11 +12,18 @@ import Confirmation from './pages/Confirmation/Confirmation'
 
 import * as authService from './services/authService'
 import * as gardenService from './services/gardenService'
+import * as profileService from './services/profileService'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
   const [gardens, setGardens] = useState([])
+  const [profiles, setProfiles] = useState([])
+
+  useEffect(() => {
+    profileService.getAllProfiles()
+      .then(profiles => setProfiles(profiles))
+  }, [])
 
   useEffect(() => {
     const fetchData = async () => {
@@ -72,7 +79,7 @@ const App = () => {
         /> */}
         <Route
           path="/gardens"
-          element={user ? <GardenList gardens={gardens} user={user} /> : <Navigate to="/login" />}
+          element={user ? <GardenList gardens={gardens} user={user} profiles={profiles} /> : <Navigate to="/login" />}
         />
         <Route
           path="/gardens/:id"
