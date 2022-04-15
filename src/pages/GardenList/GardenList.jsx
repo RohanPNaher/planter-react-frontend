@@ -1,17 +1,16 @@
 import GardenCard from '../../components/GardenCard/GardenCard'
+import styles from './GardenList.module.css'
 
-const GardenList = ({ gardens }) => {
+const GardenList = ({ gardens, user }) => {
   return (
     <>
-      <h1>Hello. This is a list of all the gardens.</h1>
       {gardens.length ?
         <>
-          {gardens.map(garden =>
-            <div key={garden.id}>
-              <GardenCard garden={garden} />
-            </div>
-            // <p key={garden.id}>{garden.name}</p>
-          )}
+          <div className={styles.cardContainer}>
+            {gardens.map(garden =>
+              <GardenCard garden={garden} key={garden.id} user={user} />
+            )}
+          </div>
         </>
         :
         <p>No gardens yet</p>

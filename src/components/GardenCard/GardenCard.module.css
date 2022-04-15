@@ -1,0 +1,44 @@
+.card {
+  width: 280px;
+  margin: 10px;
+  text-decoration: none;
+}
+
+.cardContent {
+  width: 300px;
+  min-height: 325px;
+  margin: 12px;
+  background-color: white;
+  border: 4px solid #cd7246;
+  border-radius: 15px;
+}
+
+.greenBorder {
+  height: 100%;
+  width: 100%;
+  padding: 26px 0;
+  border: 4px solid #90be4f;
+  border-radius: 10px;
+}
+
+.card h2 {
+  margin: 10px 0;
+  text-decoration: none;
+  text-align: center;
+}
+
+.cardImgContainer {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardImg {
+  width: 200px;
+  height: 200px;
+  border-radius: 15px;
+
+  object-fit: contain;
+}

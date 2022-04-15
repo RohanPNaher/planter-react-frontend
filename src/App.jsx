@@ -73,7 +73,7 @@ const App = () => {
         /> */}
         <Route
           path="/gardens"
-          element={user ? <GardenList gardens={gardens} /> : <Navigate to="/login" />}
+          element={user ? <GardenList gardens={gardens} user={user} /> : <Navigate to="/login" />}
         />
         <Route
           path="/gardens/:id"
