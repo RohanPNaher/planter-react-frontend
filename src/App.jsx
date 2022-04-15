@@ -4,7 +4,7 @@ import NavBar from './components/NavBar/NavBar'
 import Signup from './pages/Signup/Signup'
 import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
-import Profiles from './pages/Profiles/Profiles'
+// import Profiles from './pages/Profiles/Profiles'
 import GardenList from './pages/GardenList/GardenList'
 import GardenDetails from './pages/GardenDetails/GardenDetails'
 import GardenForm from './pages/Forms/GardenForm'
@@ -67,10 +67,10 @@ const App = () => {
           path="/login"
           element={<Login handleSignupOrLogin={handleSignupOrLogin} />}
         />
-        <Route
+        {/* <Route
           path="/profiles"
           element={user ? <Profiles /> : <Navigate to="/login" />}
-        />
+        /> */}
         <Route
           path="/gardens"
           element={user ? <GardenList gardens={gardens} /> : <Navigate to="/login" />}

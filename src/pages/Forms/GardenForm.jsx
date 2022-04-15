@@ -1,3 +1,4 @@
+import styles from './GardenForm.module.css'
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
@@ -38,20 +39,26 @@ const GardenForm = (props) => {
 
   return (
     <>
-      <div>
-        {id ?
-          <h1>Edit Garden</h1>
-          :
-          <h1>Add Garden</h1>
-        }
-      </div>
+      <div className={styles.container}>
+        <div className={styles.brownBorder}>
+          <div className={styles.greenBorder}>
+            <div>
+              {id ?
+                <h1 className={styles.h1}>Edit Garden</h1>
+                :
+                <h1 className={styles.h1}>Add Garden</h1>
+              }
+            </div>
 
-      <section className='form-container'>
-        <form onSubmit={handleSubmit}>
-          <GardenInput form={form} handleChange={handleChange} />
-          <button type='submit' className='btn submit'>Submit!</button>
-        </form>
-      </section>
+            <section className={styles.formContainer}>
+              <form onSubmit={handleSubmit}>
+                <GardenInput form={form} handleChange={handleChange} />
+                <button type='submit' className='btn btn-primary submit'>Submit!</button>
+              </form>
+            </section>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

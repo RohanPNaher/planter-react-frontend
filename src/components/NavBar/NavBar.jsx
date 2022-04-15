@@ -21,9 +21,10 @@ const NavBar = ({ user, handleLogout }) => {
                   </Link>
                   <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
-                    <li><Link className="dropdown-item" to="/profiles">Profiles</Link></li>
+                    {/* <li><Link className="dropdown-item" to="/profiles">Profiles</Link></li> */}
                     <li><Link className="dropdown-item" to="/gardens">Gardens</Link></li>
                     <li><Link className="dropdown-item" to="/gardens/new">Add a Garden</Link></li>
+                    <li><hr className="dropdown-divider" /></li>
                     <li><Link className="dropdown-item" to="" onClick={handleLogout}>LOG OUT</Link></li>
                   </ul>
                 </li>
