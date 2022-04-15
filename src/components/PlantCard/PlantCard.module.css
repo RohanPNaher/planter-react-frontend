@@ -57,3 +57,7 @@
 .buttonsContainers {
   text-align: center;
 }
+
+.buttonsContainers > button:last-of-type {
+  margin-left: 0.5rem;
+}

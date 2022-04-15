@@ -17,7 +17,8 @@ const NavBar = ({ user, handleLogout }) => {
             <div className='collapse navbar-collapse d-flex nav-links-container' id='navbarNavDropdown'>
               <ul className='navbar-nav'>
                 <li className="nav-item dropdown">
-                  <Link className="nav-link dropdown-toggle" to="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">AHSJKDHAJSHDKJAHDJKHASJK
+                  <Link className="nav-link dropdown-toggle" to="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-solid fa-bars"></i>
                   </Link>
                   <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -45,7 +46,8 @@ const NavBar = ({ user, handleLogout }) => {
             <div className='collapse navbar-collapse d-flex nav-links-container' id='navbarNavDropdown'>
               <ul className='navbar-nav'>
                 <li className="nav-item dropdown">
-                  <Link className="nav-link dropdown-toggle" to="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">AHSJKDHAJSHDKJAHDJKHASJK
+                  <Link className="nav-link dropdown-toggle" to="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-solid fa-bars"></i>
                   </Link>
                   <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <li><Link className="dropdown-item" to="/login">Log In</Link></li>
