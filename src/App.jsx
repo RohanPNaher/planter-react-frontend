@@ -23,7 +23,7 @@ const App = () => {
   useEffect(() => {
     profileService.getAllProfiles()
       .then(profiles => setProfiles(profiles))
-  }, [])
+  }, [gardens])
 
   useEffect(() => {
     const fetchData = async () => {
