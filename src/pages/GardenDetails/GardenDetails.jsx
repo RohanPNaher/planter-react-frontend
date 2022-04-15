@@ -23,7 +23,7 @@ const GardenDetails = ({ user }) => {
   return (
     <>
       <section className={styles.gardenContainer}>
-        <div className={styles.border}>
+        <div className={`${styles.border} ${garden.plants.length && styles.borderBottom}`}>
           <div className={styles.gardenDetails}>
             <h1 className={styles.gardenTitle}>{garden.name}</h1>
             <h3 className={styles.gardentype}>An {garden.garden_type} Garden</h3>
